@@ -36,4 +36,4 @@ function operate (operator, num1, num2){
     return;
 }
 
-console.log(operate('', 1, 2));
+console.log(operate('/', 1, 2));

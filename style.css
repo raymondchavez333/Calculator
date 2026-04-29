@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -18,6 +24,7 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 60px;
 }
 
 .display {

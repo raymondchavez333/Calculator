@@ -13,6 +13,7 @@ ul {
     height: 600px;
     border-style: solid ;
     border-color: black;
+    padding: 20px;
 }
 
 .display {

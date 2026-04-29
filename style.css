@@ -14,6 +14,8 @@ ul {
     border-style: solid ;
     border-color: black;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .display {

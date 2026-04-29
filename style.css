@@ -7,10 +7,13 @@ ul {
 .frame {
     width: 300px;
     height: 500px;
-
+    border-style: solid ;
+    border-color: black;
 }
 
 .display {
     width: 240px;
     height: 200px;
+    border-style: solid;
+    border-color: black;
 }

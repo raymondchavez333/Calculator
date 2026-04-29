@@ -57,6 +57,7 @@ li {
     border-style: solid;
     border-color: black;
     flex-grow: 1;
-    font-size: 20px;
+    font-size: 30px;
+    text-align: center;
     font-weight: bold;
 }

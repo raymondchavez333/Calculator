@@ -37,3 +37,10 @@ function operate (operator, num1, num2){
 }
 
 console.log(operate('/', 1, 2));
+
+const buttons = document.querySelectorAll("li");
+
+
+function updateFirstNum(){
+
+}

@@ -51,12 +51,16 @@ buttons.forEach((button) =>{
     });
 })
 
+let input = document.querySelector(".input");
+
 function updateFirstNum(num){
     firstNum = num;
-    console.log(firstNum);
+    input.textContent = num;
 }
 
 function updateSecondNum(num){
     secondNum = num;
-    console.log(secondNum);
+    input.textContent = num;
 }
+
+

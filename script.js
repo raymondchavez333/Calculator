@@ -40,6 +40,12 @@ console.log(operate('/', 1, 2));
 
 const buttons = document.querySelectorAll("li");
 
+buttons.forEach((button) =>{
+    button.addEventListener("click", () =>{
+        firstNum = button.textContent;
+        console.log(firstNum);
+    });
+})
 
 function updateFirstNum(){
 

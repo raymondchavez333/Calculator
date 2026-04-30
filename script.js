@@ -43,10 +43,15 @@ const buttons = document.querySelectorAll("li");
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let num = button.textContent;
-        // if(button.getAttribute)
+        let numArray = [];
         if(button.getAttribute("id") === "digit"){
-            updateFirstNum(num);
-            updateSecondNum(num);
+            numArray.push(num);
+            let finalNum = Number(numArray.join(""));
+            updateFirstNum(finalNum);
+            updateSecondNum(finalNum);
+            // if(button.getAttribute("id") === "operator"){
+                
+            // }
         }
     });
 })

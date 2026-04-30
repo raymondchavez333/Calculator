@@ -42,11 +42,21 @@ const buttons = document.querySelectorAll("li");
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
-        firstNum = button.textContent;
-        console.log(firstNum);
+        let num = button.textContent;
+        // if(button.getAttribute)
+        if(button.getAttribute("id") === "digit"){
+            updateFirstNum(num);
+            updateSecondNum(num);
+        }
     });
 })
 
-function updateFirstNum(){
+function updateFirstNum(num){
+    firstNum = num;
+    console.log(firstNum);
+}
 
+function updateSecondNum(num){
+    secondNum = num;
+    console.log(secondNum);
 }

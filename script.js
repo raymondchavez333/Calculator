@@ -40,10 +40,12 @@ console.log(operate('/', 1, 2));
 
 const buttons = document.querySelectorAll("li");
 
+let numArray = [];
+
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let num = button.textContent;
-        let numArray = [];
+        
         if(button.getAttribute("id") === "digit"){
             numArray.push(num);
             let finalNum = Number(numArray.join(""));
@@ -53,6 +55,10 @@ buttons.forEach((button) =>{
                 
             // }
         }
+
+        // if(button.getAttribute("id") === "operator"){
+
+        // }
     });
 })
 

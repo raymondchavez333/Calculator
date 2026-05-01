@@ -45,10 +45,10 @@ let numArray = [];
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let clicked = button.textContent;
-        
+        let finalNum = 0;
         if(button.getAttribute("id") === "digit"){
             numArray.push(clicked);
-            let finalNum = Number(numArray.join(""));
+            finalNum = Number(numArray.join(""));
             updateFirstNum(finalNum);
             updateSecondNum(finalNum);
         }
@@ -56,6 +56,8 @@ buttons.forEach((button) =>{
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
             console.log(clicked);
+            finalNum = Number(numArray.join(""));
+            console.log(finalNum);
         }
     });
 })

@@ -3,7 +3,7 @@ let secondNum = 0;
 let operation = '';
 
 let calculation = {firstVal: firstNum, operateSymbol: operation, secondNum: secondNum};
-console.log(calculation.firstVal);
+// console.log(calculation.operateSymbol);
 
 function add(num1, num2){
     return num1 + num2;
@@ -39,7 +39,7 @@ function operate (operator, num1, num2){
     return;
 }
 
-console.log(operate('/', 1, 2));
+// console.log(operate('/', 1, 2));
 
 const buttons = document.querySelectorAll("li");
 
@@ -59,8 +59,10 @@ buttons.forEach((button) =>{
 
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
-            console.log(clicked);
-            console.log(finalNum);
+            calculation.operateSymbol = clicked;
+            // console.log(clicked);
+            // console.log(finalNum);
+            console.log(calculation.operateSymbol);
         }
     });
 })

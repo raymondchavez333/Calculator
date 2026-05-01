@@ -2,6 +2,9 @@ let firstNum = 0 ;
 let secondNum = 0;
 let operation = '';
 
+let calculation = {firstVal: firstNum, operateSymbol: operation, secondNum: secondNum};
+console.log(calculation.firstVal);
+
 function add(num1, num2){
     return num1 + num2;
 }

@@ -41,11 +41,12 @@ console.log(operate('/', 1, 2));
 const buttons = document.querySelectorAll("li");
 
 let numArray = [];
+let finalNum = 0;
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let clicked = button.textContent;
-        let finalNum = 0;
+        // let finalNum = 0;
         if(button.getAttribute("id") === "digit"){
             numArray.push(clicked);
             finalNum = Number(numArray.join(""));
@@ -56,7 +57,6 @@ buttons.forEach((button) =>{
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
             console.log(clicked);
-            finalNum = Number(numArray.join(""));
             console.log(finalNum);
         }
     });

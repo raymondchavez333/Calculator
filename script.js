@@ -44,7 +44,7 @@ function operate (operator, num1, num2){
 const buttons = document.querySelectorAll("li");
 
 let numArray = [];
-let finalNum = 0;
+let finalNum = 0; // used for creating an array of inputted digits
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
@@ -60,9 +60,11 @@ buttons.forEach((button) =>{
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
             calculation.operateSymbol = clicked;
+            calculation.firstVal = firstNum;
             // console.log(clicked);
             // console.log(finalNum);
             console.log(calculation.operateSymbol);
+            console.log(calculation.firstVal);
         }
     });
 })

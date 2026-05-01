@@ -44,21 +44,18 @@ let numArray = [];
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
-        let num = button.textContent;
+        let clicked = button.textContent;
         
         if(button.getAttribute("id") === "digit"){
-            numArray.push(num);
+            numArray.push(clicked);
             let finalNum = Number(numArray.join(""));
             updateFirstNum(finalNum);
             updateSecondNum(finalNum);
-            // if(button.getAttribute("id") === "operator"){
-                
-            // }
         }
 
-        // if(button.getAttribute("id") === "operator"){
-
-        // }
+        if(button.getAttribute("id") === "operator"){
+            console.log()
+        }
     });
 })
 

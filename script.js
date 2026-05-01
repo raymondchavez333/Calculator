@@ -54,7 +54,8 @@ buttons.forEach((button) =>{
         }
 
         if(button.getAttribute("id") === "operator"){
-            console.log()
+            button.setAttribute("style", "background-color: gray");
+            console.log(clicked);
         }
     });
 })

@@ -76,6 +76,7 @@ buttons.forEach((button) =>{
             calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
             input.textContent = calculatedVal;
             calculation.calculated = calculatedVal;
+            console.log(calculation.calculated);
         }
     });
 })

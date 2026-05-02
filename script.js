@@ -57,6 +57,7 @@ buttons.forEach((button) =>{
                 finalNum = Number(numArray.join(""));
                 updateFirstNum(finalNum);
             }else{
+                clearGray();
                 numArray2.push(clicked);
                 finalNum2 = Number(numArray2.join(""));
                 updateSecondNum(finalNum2);
@@ -92,4 +93,8 @@ function updateSecondNum(num){
     console.log(calculation.secondVal);
 }
 
-
+function clearGray(){
+    buttons.forEach((button) => {
+        button.setAttribute("style", "background-color: none");
+    });
+}

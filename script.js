@@ -45,6 +45,8 @@ const buttons = document.querySelectorAll("li");
 
 let numArray = [];
 let finalNum = 0; // used for creating an array of inputted digits
+let numArray2 = [];
+let finalNum2 = 0; // used for creating an array of inputted digits
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
@@ -54,8 +56,11 @@ buttons.forEach((button) =>{
                 numArray.push(clicked);
                 finalNum = Number(numArray.join(""));
                 updateFirstNum(finalNum);
+            }else{
+                numArray2.push(clicked);
+                finalNum2 = Number(numArray2.join(""));
+                updateSecondNum(finalNum2);
             }
-            // updateSecondNum(finalNum);
         }
 
         if(button.getAttribute("id") === "operator"){
@@ -80,6 +85,7 @@ function updateFirstNum(num){
 function updateSecondNum(num){
     secondNum = num;
     input.textContent = num;
+    console.log(num);
 }
 
 

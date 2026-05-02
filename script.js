@@ -66,11 +66,11 @@ buttons.forEach((button) =>{
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
             calculation.operateSymbol = clicked;
-            calculation.firstVal = firstNum;
-            // console.log(clicked);
-            // console.log(finalNum);
-            console.log(calculation.operateSymbol);
-            console.log(calculation.firstVal);
+            // console.log(calculation.operateSymbol);
+        }
+
+        if(button.getAttribute("id") === "calculate"){
+
         }
     });
 })
@@ -79,13 +79,15 @@ let input = document.querySelector(".input");
 
 function updateFirstNum(num){
     firstNum = num;
+    calculation.firstVal = firstNum;
     input.textContent = num;
+    console.log(calculation.firstVal);
 }
 
 function updateSecondNum(num){
     secondNum = num;
     input.textContent = num;
-    console.log(num);
+    // console.log(num);
 }
 
 

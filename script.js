@@ -2,7 +2,7 @@ let firstNum = 0 ;
 let secondNum = 0;
 let operation = '';
 
-let calculation = {firstVal: firstNum, operateSymbol: operation, secondNum: secondNum};
+let calculation = {firstVal: firstNum, operateSymbol: operation, secondVal: secondNum};
 // console.log(calculation.operateSymbol);
 
 function add(num1, num2){
@@ -81,13 +81,14 @@ function updateFirstNum(num){
     firstNum = num;
     calculation.firstVal = firstNum;
     input.textContent = num;
-    console.log(calculation.firstVal);
+    // console.log(calculation.firstVal);
 }
 
 function updateSecondNum(num){
     secondNum = num;
+    calculation.secondVal = secondNum;
     input.textContent = num;
-    // console.log(num);
+    console.log(calculation.secondVal);
 }
 
 

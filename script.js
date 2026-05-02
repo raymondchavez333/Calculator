@@ -49,12 +49,13 @@ let finalNum = 0; // used for creating an array of inputted digits
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let clicked = button.textContent;
-        // let finalNum = 0;
         if(button.getAttribute("id") === "digit"){
-            numArray.push(clicked);
-            finalNum = Number(numArray.join(""));
-            updateFirstNum(finalNum);
-            updateSecondNum(finalNum);
+            if(calculation.operateSymbol === ''){
+                numArray.push(clicked);
+                finalNum = Number(numArray.join(""));
+                updateFirstNum(finalNum);
+            }
+            // updateSecondNum(finalNum);
         }
 
         if(button.getAttribute("id") === "operator"){

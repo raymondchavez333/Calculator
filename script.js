@@ -70,7 +70,8 @@ buttons.forEach((button) =>{
         }
 
         if(button.getAttribute("id") === "calculate"){
-
+            input.textContent = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
+            
         }
     });
 })

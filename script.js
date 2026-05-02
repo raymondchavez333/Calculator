@@ -48,6 +48,8 @@ let finalNum = 0; // used for creating an array of inputted digits
 let numArray2 = [];
 let finalNum2 = 0; // used for creating an array of inputted digits
 
+let calculatedVal = 0;
+
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let clicked = button.textContent;
@@ -71,8 +73,9 @@ buttons.forEach((button) =>{
         }
 
         if(button.getAttribute("id") === "calculate"){
-            input.textContent = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
-            
+            calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
+            input.textContent = calculatedVal;
+            calculation.calculated = calculatedVal;
         }
     });
 })

@@ -68,12 +68,15 @@ buttons.forEach((button) =>{
 
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
-            calculation.operateSymbol = clicked;
+            if(calculation.operateSymbol === ''){
+                calculation.operateSymbol = clicked;
+            }
             if(calculation.firstVal !== 0 && calculation.operateSymbol !== '' && calculation.secondVal !== 0){
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 calculation.calculated = calculatedVal;
                 input.textContent = calculatedVal;
-                console.log(calculation.calculated);
+                console.log(calculation.operateSymbol);
+                // console.log(calculation.calculated);
             }
         }
 
@@ -99,7 +102,7 @@ function updateSecondNum(num){
     secondNum = num;
     calculation.secondVal = secondNum;
     input.textContent = num;
-    console.log(calculation.secondVal);
+    // console.log(calculation.secondVal);
 }
 
 function clearGray(){

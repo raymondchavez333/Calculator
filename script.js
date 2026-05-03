@@ -76,6 +76,9 @@ buttons.forEach((button) =>{
                 calculation.calculated = calculatedVal;
                 input.textContent = calculatedVal;
                 console.log(calculation.operateSymbol);
+                calculation.operateSymbol = clicked;
+                console.log(calculation.operateSymbol);
+                console.log(clicked);
                 // console.log(calculation.calculated);
             }
         }

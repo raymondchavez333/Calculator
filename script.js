@@ -72,6 +72,7 @@ buttons.forEach((button) =>{
             if(calculation.firstVal !== 0 && calculation.operateSymbol !== '' && calculation.secondVal !== 0){
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 calculation.calculated = calculatedVal;
+                input.textContent = calculatedVal;
                 console.log(calculation.calculated);
             }
         }
@@ -80,7 +81,7 @@ buttons.forEach((button) =>{
             calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
             input.textContent = calculatedVal;
             calculation.calculated = calculatedVal;
-            // console.log(calculation.calculated);
+            // console.log(calculation);
         }
     });
 })

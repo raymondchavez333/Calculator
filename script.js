@@ -69,14 +69,18 @@ buttons.forEach((button) =>{
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
             calculation.operateSymbol = clicked;
-            // console.log(calculation.operateSymbol);
+            if(calculation.firstVal !== 0 && calculation.operateSymbol !== '' && calculation.secondVal !== 0){
+                calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
+                calculation.calculated = calculatedVal;
+                console.log(calculation.calculated);
+            }
         }
 
         if(button.getAttribute("id") === "calculate"){
             calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
             input.textContent = calculatedVal;
             calculation.calculated = calculatedVal;
-            console.log(calculation.calculated);
+            // console.log(calculation.calculated);
         }
     });
 })

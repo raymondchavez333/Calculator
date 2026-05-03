@@ -78,12 +78,13 @@ buttons.forEach((button) =>{
                 console.log(calculation.operateSymbol);
                 calculation.operateSymbol = clicked;
                 calculation.firstVal = calculatedVal;
-                calculation.secondVal = 0;
-                console.log(calculation.firstVal);
-                console.log(calculation.secondVal);
-                // console.log(calculation.operateSymbol);
-                // console.log(clicked);
-                // console.log(calculation.calculated);
+                let numArray2Size = numArray2.length;
+                for(let i = 1; i <= numArray2Size; i++){
+                    numArray2.pop();
+                }
+                // console.log(calculation.firstVal);
+                // console.log(calculation.secondVal);
+                console.log(numArray2);
             }
         }
 

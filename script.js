@@ -75,7 +75,7 @@ buttons.forEach((button) =>{
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 calculation.calculated = calculatedVal;
                 input.textContent = calculatedVal;
-                console.log(calculation.operateSymbol);
+                // console.log(calculation.operateSymbol);
                 calculation.operateSymbol = clicked;
                 calculation.firstVal = calculatedVal;
                 let numArray2Size = numArray2.length;
@@ -84,7 +84,7 @@ buttons.forEach((button) =>{
                 }
                 // console.log(calculation.firstVal);
                 // console.log(calculation.secondVal);
-                console.log(numArray2);
+                // console.log(numArray2);
             }
         }
 
@@ -93,13 +93,34 @@ buttons.forEach((button) =>{
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 input.textContent = calculatedVal;
                 calculation.calculated = calculatedVal;
+            }else{input.textContent = 0;
+            // console.log(calculation);
             }
+        }
+
+        if(button.getAttribute("id") === "clear"){
+           firstNum = 0;
+           secondNum = 0;
+           operation = '';
+           let numArraySize = numArray.length;
+            for(let i = 1; i <= numArraySize; i++){
+                numArray.pop();
+            }
+            let numArray2Size = numArray2.length;
+            for(let i = 1; i <= numArray2Size; i++){
+                numArray2.pop();
+            }
+
+            calculation.firstVal = 0;
+            calculation.operateSymbol = '';
+            calculation.secondVal = 0;
+            delete calculation.calculated;
             
             input.textContent = 0;
-            // console.log(calculation);
+           console.log(calculation);
         }
     });
-})
+});
 
 let input = document.querySelector(".input");
 

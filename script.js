@@ -18,7 +18,7 @@ function multiply(num1, num2){
 }
 
 function divide(num1, num2){
-    return num1 / num2;
+    return Math.round((num1 / num2) * 10000000) / 10000000;
 }
 
 function operate (operator, num1, num2){

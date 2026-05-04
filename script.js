@@ -132,6 +132,10 @@ function updateFirstNum(num){
 }
 
 function updateSecondNum(num){
+    if(calculation.operateSymbol === "/" && num === 0){
+        alert("You can't divide by zero!");
+        return;
+    }
     secondNum = num;
     calculation.secondVal = secondNum;
     input.textContent = num;

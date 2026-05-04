@@ -89,9 +89,13 @@ buttons.forEach((button) =>{
         }
 
         if(button.getAttribute("id") === "calculate"){
-            calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
-            input.textContent = calculatedVal;
-            calculation.calculated = calculatedVal;
+            if(calculation.firstVal !== 0 && calculation.operateSymbol !== '' && calculation.secondVal !== 0){
+                calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
+                input.textContent = calculatedVal;
+                calculation.calculated = calculatedVal;
+            }
+            
+            input.textContent = 0;
             // console.log(calculation);
         }
     });

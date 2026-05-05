@@ -93,6 +93,8 @@ buttons.forEach((button) =>{
                 // console.log(numArray2);
             }
             if(("firstVal" in calculation) && ("operateSymbol" in calculation) && !("secondVal" in calculation)){
+                clearGray();
+                button.setAttribute("style", "background-color: gray");
                 calculation.operateSymbol = clicked;
                 console.log(calculation);
             }

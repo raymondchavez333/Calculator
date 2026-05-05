@@ -65,6 +65,7 @@ buttons.forEach((button) =>{
                 numArray2.push(clicked);
                 finalNum2 = Number(numArray2.join(""));
                 updateSecondNum(finalNum2);
+                console.log(calculation);
             }
         }
 
@@ -111,6 +112,11 @@ buttons.forEach((button) =>{
                 delete calculation.secondVal;
                 delete calculation.calculated;
 
+                let numArray2Size = numArray2.length;
+                for(let i = 1; i <= numArray2Size; i++){
+                    numArray2.pop();
+                }
+                
                 console.log(calculation);
             }else{input.textContent = 0;
             // console.log(calculation);

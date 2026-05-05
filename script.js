@@ -92,6 +92,10 @@ buttons.forEach((button) =>{
                 // console.log(calculation.secondVal);
                 // console.log(numArray2);
             }
+            if(("firstVal" in calculation) && ("operateSymbol" in calculation) && !("secondVal" in calculation)){
+                calculation.operateSymbol = clicked;
+                console.log(calculation);
+            }
         }
 
         if(button.getAttribute("id") === "calculate"){
@@ -104,7 +108,7 @@ buttons.forEach((button) =>{
                 delete calculation.operateSymbol;
                 delete calculation.secondVal;
                 delete calculation.calculated;
-                
+
                 console.log(calculation);
             }else{input.textContent = 0;
             // console.log(calculation);

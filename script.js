@@ -2,7 +2,8 @@ let firstNum = 0 ;
 let secondNum = 0;
 let operation = '';
 
-let calculation = {firstVal: firstNum, operateSymbol: operation, secondVal: secondNum};
+// let calculation = {firstVal: firstNum, operateSymbol: operation, secondVal: secondNum};
+let calculation = {};
 // console.log(calculation.operateSymbol);
 
 function add(num1, num2){
@@ -54,10 +55,11 @@ buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let clicked = button.textContent;
         if(button.getAttribute("id") === "digit"){
-            if(calculation.operateSymbol === ''){
+            if(!("operateSymbol" in calculation)){
                 numArray.push(clicked);
                 finalNum = Number(numArray.join(""));
                 updateFirstNum(finalNum);
+                console.log(calculation);
             }else{
                 clearGray();
                 numArray2.push(clicked);
@@ -68,10 +70,10 @@ buttons.forEach((button) =>{
 
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
-            if(calculation.operateSymbol === ''){
+            if(!("operateSymbol" in calculation)){
                 calculation.operateSymbol = clicked;
             }
-            if(calculation.firstVal !== 0 && calculation.operateSymbol !== '' && calculation.secondVal !== 0){
+            if(("firstVal" in calculation) && ("operateSymbol" in calculation) && ("secondVal" in calculation)){
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 calculation.calculated = calculatedVal;
                 input.textContent = calculatedVal;
@@ -89,7 +91,7 @@ buttons.forEach((button) =>{
         }
 
         if(button.getAttribute("id") === "calculate"){
-            if(calculation.firstVal !== 0 && calculation.operateSymbol !== '' && calculation.secondVal !== 0){
+            if(("firstVal" in calculation) && ("operateSymbol" in calculation) && ("secondVal" in calculation)){
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 input.textContent = calculatedVal;
                 calculation.calculated = calculatedVal;
@@ -115,6 +117,9 @@ buttons.forEach((button) =>{
             calculation.operateSymbol = '';
             calculation.secondVal = 0;
             delete calculation.calculated;
+            delete calculation.firstVal;
+            delete calculation.operateSymbol;
+            delete calculation.secondVal;
             
             input.textContent = 0;
            console.log(calculation);

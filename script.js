@@ -86,7 +86,7 @@ buttons.forEach((button) =>{
                 }
                 delete calculation.secondVal;
                 delete calculation.calculated;
-                
+
                 console.log(calculation);
                 // console.log(calculation.firstVal);
                 // console.log(calculation.secondVal);
@@ -99,6 +99,13 @@ buttons.forEach((button) =>{
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 input.textContent = calculatedVal;
                 calculation.calculated = calculatedVal;
+                calculation.firstVal = calculatedVal;
+
+                delete calculation.operateSymbol;
+                delete calculation.secondVal;
+                delete calculation.calculated;
+                
+                console.log(calculation);
             }else{input.textContent = 0;
             // console.log(calculation);
             }

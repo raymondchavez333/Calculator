@@ -55,7 +55,17 @@ buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let clicked = button.textContent;
         if(button.getAttribute("id") === "digit"){
+            if("result" in calculation){
+                let numArraySize = numArray.length;
+                for(let i = 1; i <= numArraySize; i++){
+                numArray.pop();
+                firstNum = 0;
+                finalNum = 0;
+                delete calculation.firstVal;
+                }
+            }
             if(!("operateSymbol" in calculation)){
+                delete calculation.result;
                 numArray.push(clicked);
                 finalNum = Number(numArray.join(""));
                 updateFirstNum(finalNum);
@@ -112,11 +122,13 @@ buttons.forEach((button) =>{
                 delete calculation.secondVal;
                 delete calculation.calculated;
 
+                calculation.result = "=";
+
                 let numArray2Size = numArray2.length;
                 for(let i = 1; i <= numArray2Size; i++){
                     numArray2.pop();
                 }
-                
+
                 console.log(calculation);
             }else{input.textContent = 0;
             // console.log(calculation);

@@ -129,7 +129,7 @@ buttons.forEach((button) =>{
             for(let i = 1; i <= numArray2Size; i++){
                 numArray2.pop();
             }
-
+            clearGray();
             calculation.firstVal = 0;
             calculation.operateSymbol = '';
             calculation.secondVal = 0;

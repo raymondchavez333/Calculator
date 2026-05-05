@@ -84,6 +84,10 @@ buttons.forEach((button) =>{
                 for(let i = 1; i <= numArray2Size; i++){
                     numArray2.pop();
                 }
+                delete calculation.secondVal;
+                delete calculation.calculated;
+                
+                console.log(calculation);
                 // console.log(calculation.firstVal);
                 // console.log(calculation.secondVal);
                 // console.log(numArray2);

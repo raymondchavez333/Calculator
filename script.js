@@ -53,14 +53,14 @@ let calculatedVal = 0;
 // let period = buttons.
 
 let period = document.querySelector(".point");
-console.log(period);
+// console.log(period);
 
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
         let clicked = button.textContent;
         if(button.getAttribute("id") === "digit"){
-            if("result" in calculation){
+            if(("result" in calculation) && !("operateSymbol" in calculation)){
                 let numArraySize = numArray.length;
                 for(let i = 1; i <= numArraySize; i++){
                 numArray.pop();
@@ -146,6 +146,7 @@ buttons.forEach((button) =>{
             }else{input.textContent = 0;
             // console.log(calculation);
             }
+            clearGray();
         }
 
         if(button.getAttribute("id") === "clear"){
@@ -169,6 +170,7 @@ buttons.forEach((button) =>{
             delete calculation.firstVal;
             delete calculation.operateSymbol;
             delete calculation.secondVal;
+            delete calculation.result;
             
             input.textContent = 0;
            console.log(calculation);

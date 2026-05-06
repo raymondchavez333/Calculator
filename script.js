@@ -66,6 +66,9 @@ buttons.forEach((button) =>{
             }
             if(!("operateSymbol" in calculation)){
                 delete calculation.result;
+                if(clicked === "."){
+                    button.textContent = "";
+                }
                 numArray.push(clicked);
                 finalNum = Number(numArray.join(""));
                 updateFirstNum(finalNum);

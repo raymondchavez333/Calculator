@@ -50,6 +50,11 @@ let numArray2 = [];
 let finalNum2 = 0; // used for creating an array of inputted digits
 
 let calculatedVal = 0;
+// let period = buttons.
+
+let period = document.querySelector(".point");
+console.log(period);
+
 
 buttons.forEach((button) =>{
     button.addEventListener("click", () =>{
@@ -75,6 +80,9 @@ buttons.forEach((button) =>{
                 console.log(calculation);
             }else{
                 clearGray();
+                if(clicked === "."){
+                    button.textContent = "";
+                }
                 numArray2.push(clicked);
                 finalNum2 = Number(numArray2.join(""));
                 updateSecondNum(finalNum2);
@@ -84,6 +92,7 @@ buttons.forEach((button) =>{
 
         if(button.getAttribute("id") === "operator"){
             button.setAttribute("style", "background-color: gray");
+            period.textContent = ".";
             if(!("operateSymbol" in calculation)){
                 calculation.operateSymbol = clicked;
             }
@@ -115,6 +124,7 @@ buttons.forEach((button) =>{
         }
 
         if(button.getAttribute("id") === "calculate"){
+            period.textContent = ".";
             if(("firstVal" in calculation) && ("operateSymbol" in calculation) && ("secondVal" in calculation)){
                 calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.secondVal);
                 input.textContent = calculatedVal;
@@ -139,6 +149,7 @@ buttons.forEach((button) =>{
         }
 
         if(button.getAttribute("id") === "clear"){
+            period.textContent = ".";
            firstNum = 0;
            secondNum = 0;
            operation = '';

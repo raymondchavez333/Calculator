@@ -146,7 +146,7 @@ buttons.forEach((button) =>{
             }else if(("firstVal" in calculation) && ("result" in calculation)){
                 input.textContent = calculation.firstVal;
             }else if(("firstVal" in calculation) && ("operateSymbol" in calculation)){
-                calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, calculation.firstVal);
+                calculatedVal = operate(calculation.operateSymbol, calculation.firstVal, 0);
                 input.textContent = calculatedVal;
                 calculation.calculated = calculatedVal;
                 calculation.firstVal = calculatedVal;
@@ -161,6 +161,9 @@ buttons.forEach((button) =>{
                 for(let i = 1; i <= numArray2Size; i++){
                     numArray2.pop();
                 }
+                console.log(calculation);
+            }else if("firstVal" in calculation){
+                input.textContent = calculation.firstVal;
                 console.log(calculation);
             }else{input.textContent = 0;
             // console.log(calculation);

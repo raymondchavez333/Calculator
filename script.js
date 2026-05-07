@@ -143,6 +143,8 @@ buttons.forEach((button) =>{
                 }
 
                 console.log(calculation);
+            }else if(("firstVal" in calculation) && ("result" in calculation)){
+                input.textContent = calculation.firstVal;
             }else{input.textContent = 0;
             // console.log(calculation);
             }

@@ -211,6 +211,60 @@ buttons.forEach((button) =>{
     });
 });
 
+document.addEventListener("keydown", function(event){
+   if(event.key === "1"){
+     document.querySelector(".one").click();
+   } 
+   if(event.key === "2"){
+     document.querySelector(".two").click();
+   }
+   if(event.key === "3"){
+     document.querySelector(".three").click();
+   } 
+   if(event.key === "4"){
+     document.querySelector(".four").click();
+   } 
+   if(event.key === "5"){
+     document.querySelector(".five").click();
+   } 
+   if(event.key === "6"){
+     document.querySelector(".six").click();
+   }
+   if(event.key === "7"){
+     document.querySelector(".seven").click();
+   }
+   if(event.key === "8"){
+     document.querySelector(".eight").click();
+   }
+   if(event.key === "9"){
+     document.querySelector(".nine").click();
+   }
+   if(event.key === "0"){
+     document.querySelector(".zero").click();
+   }
+   if(event.key === "+"){
+     document.querySelector(".add").click();
+   }
+   if(event.key === "-"){
+     document.querySelector(".subtract").click();
+   }
+   if(event.key === "*"){
+     document.querySelector(".multiply").click();
+   }
+   if(event.key === "/"){
+     document.querySelector(".divide").click();
+   }
+   if(event.key === "Delete" || event.key === "Backspace"){
+     document.querySelector(".backspace").click();
+   }
+   if(event.key === "."){
+     document.querySelector(".point").click();
+   }
+   if(event.key === "Enter"){
+     document.querySelector(".equals").click();
+   }
+});
+
 let input = document.querySelector(".input");
 
 function updateFirstNum(num){

@@ -216,7 +216,12 @@ let input = document.querySelector(".input");
 function updateFirstNum(num){
     firstNum = num;
     calculation.firstVal = firstNum;
-    input.textContent = num;
+    if (isNaN(num)){
+        input.textContent = "0.";
+    }else{
+        input.textContent = num;
+    }
+    
     // console.log(calculation.firstVal);
 }
 
@@ -227,7 +232,11 @@ function updateSecondNum(num){
     }
     secondNum = num;
     calculation.secondVal = secondNum;
-    input.textContent = num;
+    if (isNaN(num)){
+        input.textContent = "0.";
+    }else{
+        input.textContent = num;
+    }
     // console.log(calculation.secondVal);
 }
 

@@ -184,6 +184,30 @@ buttons.forEach((button) =>{
             input.textContent = 0;
            console.log(calculation);
         }
+
+        if(button.getAttribute("id") === "backspace"){
+            if(("firstVal" in calculation) && !("secondVal" in calculation)){
+                numArray.pop();
+                finalNum = Number(numArray.join(""));
+                updateFirstNum(finalNum);
+                console.log(calculation);
+                console.log(numArray);
+            }
+            if("secondVal" in calculation){
+                numArray2.pop();
+                finalNum2 = Number(numArray2.join(""));
+                updateSecondNum(finalNum2);
+                console.log(calculation);
+                console.log(numArray2);
+            }
+            if(("firstVal" in calculation) && ("result" in calculation)){
+                delete calculation.result;
+                numArray.push(clicked);
+                finalNum = Number(numArray.join(""));
+                updateFirstNum(finalNum);
+                console.log(calculation);
+            }
+        }
     });
 });
 
